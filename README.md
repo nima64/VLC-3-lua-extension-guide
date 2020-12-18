@@ -1,4 +1,4 @@
-# VLC-3 Lua extension guide
+# VLC-3 Lua Extension Guide
 This a documentation for writing extensions in lua for vlc 3, as the current docs online is deprecated for 3.0.
 
 to download the source code for VLC-3.0 visit the [git lab page](https://code.videolan.org/videolan/vlc-3.0)
