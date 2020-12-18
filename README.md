@@ -108,7 +108,7 @@ VLC Var methods:
 - count_choices()
 - toggle_bool()
 
-Valid variables for Var:
+Valid String Argument for Var:
 - state
 - rate
 - position
