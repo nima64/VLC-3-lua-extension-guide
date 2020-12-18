@@ -6,9 +6,9 @@ to download the source code for VLC-3.0 visit the [git lab page](https://code.vi
 
 callback functions that you use to communicate to VLC:
 - descriptor (sends meta data about your plugin)
-- activate
-- deactivate
-- close
+- activate()
+- deactivate()
+- close()
 - input_changed()
 - playing_changed()
 - meta_changed()
