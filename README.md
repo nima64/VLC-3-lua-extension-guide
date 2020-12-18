@@ -40,9 +40,9 @@ function createDialog()
 	d:add_label("helloworld",1,1,1,1)
 end
 ```
-The Descriptor is a required function, if it's not completed then your plugin won't appear on the menu.
-To create the gui we have to acess the VLC api which is acessed through the global **vlc** object.  
-To create a gui we used the dialog function, then we added a label inorder for something to show
+The Descriptor is required for your plugin to appear in the menu.
+To create the gui we have to acess the VLC api, which is acessed through the global **vlc** object.  
+Make a dialog through vlc.dialog(title), then we added a label inorder for something to show
 add_label("helloworld",1,1,1,1)  
 
 To readmore see https://www.videolan.org/developers/vlc/share/lua/README.txt, **Disclaimer parts of it are depericated for VLC-3.0**  
