@@ -44,7 +44,7 @@ The Descriptor is required for your plugin to appear in the menu.
 To create the gui we have to acess the VLC api, which is acessed through the global **vlc** object.  
 Make a dialog through vlc.dialog(title), then we added a label inorder for something to show
 add_label("helloworld",1,1,1,1)  
-For debugging use run vlc with a -v ex: vlc -v
+For debugging use run vlc with a -v ex: vlc -v  
 To readmore see https://www.videolan.org/developers/vlc/share/lua/README.txt, **Disclaimer parts of it are depericated for VLC-3.0**  
 
 
