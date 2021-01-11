@@ -39,12 +39,14 @@ to create a uri path use vlc.strings.make_uri(path)
 In windows use backslashes \ in your path, if you use / foward slashes your path will be appended to vlc's config directory.  
 
 Example of a correct path:  
-vlc.strings.make_uri("C:\User\bob\Desktop\man eating burger.mp4")   
+vlc.strings.make_uri("C:\User\bob\Desktop\man eating burger.mp4") 
+
+make_uri output:  
+win file:///C:/User/bob/Desktop/man%20eating%20burger.mp4  
+unix/linux file:///home/bob/Desktop/man%20eating%20burger.mp4  
 
 NOTE: when parsing for a path with windows you need to remove "file:///" 3 forward slashes.
-While with unix/linux you need to remove 2, "file://"
-output: win file:///C:/User/bob/Desktop/man%20eating%20burger.mp4  
-unix/linux file:///home/bob/Desktop/man%20eating%20burger.mp4  
+While with unix/linux you need to remove 2, "file://"  
 
 
 ### Reference ###
