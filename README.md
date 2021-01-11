@@ -1,11 +1,10 @@
-# VLC-3 Lua Extension Guide
-This a documentation for writing extensions in lua for vlc 3, as the current docs online is deprecated for 3.0.
+# VLC 3.0 Lua Extension Guide
+This a documentation for writing extensions in lua for vlc 3, as the current [lua readme](https://www.videolan.org/developers/vlc/share/lua/README.txt) provided by Video Lan is depcricated. So I made this guide to supplement the readme, for any questions and confusion others may have
 
 to download the source code for VLC-3.0 visit the [git lab page](https://code.videolan.org/videolan/vlc-3.0)
-## Making a barebones hello world window/dialog
 
 callback functions that you use to communicate to VLC:
-- descriptor (sends meta data about your plugin)
+- descriptor
 - activate()
 - deactivate()
 - close()
@@ -13,42 +12,34 @@ callback functions that you use to communicate to VLC:
 - playing_changed()
 - meta_changed()
 - menu()
-- trigger_menu(id)  
-to see more details regarding these functions see [template-plugin.lua](https://github.com/nima64/vlc-lua-extension-template/blob/main/template-plugin.lua)
+- trigger_menu(id)
 
-```lua
-function descriptor()
-	return {
-		title = "VLC Extension - Basic structure",
-		version = "1.0",
-		author = "",
-		url = 'http://',
-		shortdesc = "short description",
-		description = "full description",
-		capabilities = {"menu", "input-listener", "meta-listener", "playing-listener"}
-	}
-end
-function activate()
-  createDialog()
-end
-function close()
-	vlc.deactivate()
-end
-function createDialog()
-	local d = vlc.dialog("helloworld extension")
-  --add_label(txt,col,row,col_span,row_span)
-	d:add_label("helloworld",1,1,1,1)
-end
-```
-The Descriptor is required for your plugin to appear in the menu.
-To create the gui we have to acess the VLC api, which is acessed through the global **vlc** object.  
-Make a dialog through vlc.dialog(title), then we added a label inorder for something to show
-add_label("helloworld",1,1,1,1)  
-For debugging use run vlc with a -v ex: vlc -v  
-To readmore see https://www.videolan.org/developers/vlc/share/lua/README.txt, **Disclaimer parts of it are depericated for VLC-3.0**  
+read more in detail about these functions here [template-plugin.lua](https://github.com/nima64/vlc-lua-extension-template/blob/main/template-plugin.lua)  
+The minumim vlc requires for extension to work is a descriptor(needed to show up in menu) and activate.
+**custom callbacks through add_callback() is depericated, so you cannot add functions to the event loop. Creating your event loop is possible,but you'll have to do it through a vlc interface which communicates to your extension, see the Time extension and interface in videolan's adddon page to learn more**  
+  
+For debugging run vlc with the verbose argument v ex: vlc -v  
+In vlc 3 the player object is deprecated, so to get the current media object use input instead.  
 
+## Getting and Changing the current media data  ##
+manipulating the player can be done through the vlc.var command
+vlc.var.get(vlc.object.input(),"time") --vlc time is ms(microseconds) or in seconds = ms*10^-6 
+vlc.var.set(vlc.object.input(),"time",3243)
+vlc.var.set(vlc.object.input(),"time-offset",-300) --offsed +- current time
+vlc.var.get(vlc.object.input(),"position")
+vlc.var.set(vlc.object.input(),"position",3240)
+## URI file handling in VLC ##  
+vlc paths are all handled in URI,
+to create a uri a path, use vlc.strings.make_uri(path)
+ex output: win file:///C:/User/bob/Desktop/man%20eating%20burger.mp4
+unix/linux file:///home/bob/Desktop/man%20eating%20burger.mp4  
+NOTE: when parsing for path with windows you need to remove file:/// 3 forward slashes,  while with unix/linux you need to remove 2 file://.  
 
-VLC Objects via vlc.object (modules/lua/object.c):
+when calling make_uri in windows,vlc requires the slashes to be back slashes '\' foward slashes will be redirected to vlc's config directory.  
+ex: vlc.strings.make_uri("C:\User\bob\Desktop\man eating burger.mp4") -> outputs see win uri example  
+
+## VLC api calls ##
+VLC Objects acessible via vlc.object (modules/lua/object.c):
 - input
 - playlist
 - libvlc
@@ -78,15 +69,13 @@ VLC Sub Modules (modules/lua/extension.c):
 - gettext()
 - equalizer()
 
-## Sub-Module Methods
-
-VLC Input:
+vlc.input methods:
 - is_playing()
-- item()
+- item() -> returns an item obj
 - add_subtitle()
 - add_subtitle_mrl()
 
-VLC InputItem via vlc.iput.item() (input.c)
+item obj methods
 - is_preparsed
 - metas
 - set_meta
@@ -96,7 +85,7 @@ VLC InputItem via vlc.iput.item() (input.c)
 - stats
 - info
 
-VLC Var methods:
+vlc.var methods:
 - inherit()
 - get()
 - get_list()
