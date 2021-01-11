@@ -3,14 +3,12 @@ This a documentation for writing extensions in lua for vlc 3, as parts of the [l
 
 to download the source code for VLC-3.0 visit the [git lab page](https://code.videolan.org/videolan/vlc-3.0)  
 callback functions that you use to communicate to VLC:
-- descriptor
-- activate()
-- deactivate()
-- close()
-- input_changed()
-- playing_changed()
-- meta_changed()
-- menu()
+- activate
+- deactivate
+- close
+- input_changed
+- playing_changed
+- meta_changed
 - trigger_menu(id)
 
 read more in detail about these functions here [template-plugin.lua](https://github.com/nima64/vlc-lua-extension-template/blob/main/template-plugin.lua)  
