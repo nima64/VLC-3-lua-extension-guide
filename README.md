@@ -14,7 +14,9 @@ callback functions that you use to communicate to VLC:
 - trigger_menu(id)
 
 read more in detail about these functions here [template-plugin.lua](https://github.com/nima64/vlc-lua-extension-template/blob/main/template-plugin.lua)  
-The minumim vlc requires for extension to work is a descriptor(needed to show up in menu) and activate.
+
+The minumim vlc requires for extension to work is a descriptor(needed to show up in menu) and activate.  
+
 **custom callbacks through add_callback() is depericated, so you cannot add functions to the event loop. Creating your event loop is possible,but you'll have to do it through a vlc interface which communicates to your extension, see the Time extension and interface in videolan's adddon page to learn more**  
   
 For debugging run vlc with the verbose argument v ex: vlc -v  
@@ -26,7 +28,8 @@ vlc.var.get(vlc.object.input(),"time") --vlc time is ms(microseconds) or in seco
 vlc.var.set(vlc.object.input(),"time",3243)
 vlc.var.set(vlc.object.input(),"time-offset",-300) --offsed +- current time
 vlc.var.get(vlc.object.input(),"position")
-vlc.var.set(vlc.object.input(),"position",3240)
+vlc.var.set(vlc.object.input(),"position",3240)  
+
 ## URI file handling in VLC ##  
 vlc paths are all handled in URI,
 to create a uri a path, use vlc.strings.make_uri(path)
