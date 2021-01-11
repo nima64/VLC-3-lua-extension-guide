@@ -42,8 +42,8 @@ Example of a correct path:
 vlc.strings.make_uri("C:\User\bob\Desktop\man eating burger.mp4") 
 
 make_uri output:  
-win file:///C:/User/bob/Desktop/man%20eating%20burger.mp4  
-unix/linux file:///home/bob/Desktop/man%20eating%20burger.mp4  
+win "file:///C:/User/bob/Desktop/man%20eating%20burger.mp4"  
+unix/linux "file:///home/bob/Desktop/man%20eating%20burger.mp4"  
 
 NOTE: when parsing for a path with windows you need to remove "file:///" 3 forward slashes.
 While with unix/linux you need to remove 2, "file://"  
