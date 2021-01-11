@@ -17,7 +17,7 @@ read more in detail about these functions here [template-plugin.lua](https://git
 
 The minumim vlc requires for extension to work is a descriptor(needed to show up in menu) and activate.  
 
-**custom callbacks through add_callback() is depericated, so you cannot add functions to the event loop. Creating your event loop is possible,but you'll have to do it through a vlc interface which communicates to your extension, see the Time extension and interface in videolan's adddon page to learn more**  
+*custom callbacks through add_callback() is depericated, so you cannot add functions to the event loop. Creating your event loop is possible,but you'll have to do it through a vlc interface which communicates to your extension, see the Time extension and interface in videolan's adddon page to learn more*  
   
 For debugging run vlc with the verbose argument v ex: vlc -v  
 In vlc 3 the player object is deprecated, so to get the current media object use input instead.  
