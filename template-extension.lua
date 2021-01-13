@@ -37,7 +37,7 @@ function playing_changed()
 end
 function meta_changed()
 	-- related to capabilities={"meta-listener"} in descriptor()
-	-- triggered by available media input meta data?
+	-- triggered by change in media input's meta data
 end
 
 function menu()
