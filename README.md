@@ -26,8 +26,8 @@ manipulating the player can be done through the **vlc.var**
 vlc.var.get(vlc.object.input(),"time") returns in microseconds,for seconds use ms*10^-6  
 
 vlc.var.set(vlc.object.input(),"time",3243)
-vlc.var.set(vlc.object.input(),"time-offset",-300) 
-vlc.var.get(vlc.object.input(),"position")
+vlc.var.set(vlc.object.input(),"time-offset",-300)  
+vlc.var.get(vlc.object.input(),"position")  
 vlc.var.set(vlc.object.input(),"position",3240)  
 
 ### URI file handling in VLC ###  
