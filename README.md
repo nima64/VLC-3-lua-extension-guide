@@ -5,7 +5,6 @@ to download the source code for VLC-3.0 visit the [git lab page](https://code.vi
 callback functions that you use to communicate to VLC:  
 *activate  
 deactivate  
-close  
 input_changed  
 playing_changed  
 meta_changed  
