@@ -47,13 +47,14 @@ While with unix/linux you need to remove 2, "file://"
 
 
 ### Reference ###
-VLC Objects acessible via vlc.object (modules/lua/object.c):
-- input
-- playlist
-- libvlc
-- find
-- vout
-- aout  
+| VLC Objects acessible via vlc.object (modules/lua/object.c) |
+| ---                                                         |
+| input |
+| playlist |
+| libvlc |
+| find |
+| vout |
+| aout  |
 
 VLC Sub Modules (modules/lua/extension.c):
 - config()
