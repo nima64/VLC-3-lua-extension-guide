@@ -56,74 +56,79 @@ While with unix/linux you need to remove 2, "file://"
 | vout |
 | aout  |
 
-VLC Sub Modules (modules/lua/extension.c):
-- config()
-- dialog()
-- input()
-- msg()
-- object()
-- osd()
-- playlist()
-- stream()
-- strings()
-- variables()
-- video()
-- vlm()
-- volume()
-- xml()
-- vlcio()
-- errno()
-- rand()
-- rd()
-- gettext()
-- equalizer()
+|VLC Sub Modules (modules/lua/extension.c):|
+|---|
+| config()|
+| dialog()|
+| input()|
+| msg()|
+| object()|
+| osd()|
+| playlist()|
+| stream()|
+| strings()|
+| variables()|
+| video()|
+| vlm()|
+| volume()|
+| xml()|
+| vlcio()|
+| errno()|
+| rand()|
+| rd()|
+| gettext()|
+| equalizer()|
 
-vlc.input methods:
-- is_playing()
-- item() -> returns an item obj
-- add_subtitle()
-- add_subtitle_mrl()
+|vlc.input methods:|
+|---|
+| is_playing()|
+| item() -> returns an item obj|
+| add_subtitle()|
+| add_subtitle_mrl()|
 
-item obj methods
-- is_preparsed
-- metas
-- set_meta
-- uri
-- name
-- duration
-- stats
-- info
+|item obj methods|
+|---|
+| is_preparsed|
+| metas|
+| set_meta|
+| uri|
+| name|
+| duration|
+| stats|
+| info|
 
-vlc.var methods:
-- inherit()
-- get()
-- get_list()
-- set()
-- create()
-- trigger_callback()
-- libvlc_command()
-- inc_integer()
-- dec_integer()
-- count_choices()
-- toggle_bool()
+|vlc.var methods:|
+|---|
+| inherit()|
+| get()|
+| get_list()|
+| set()|
+| create()|
+| trigger_callback()|
+| libvlc_command()|
+| inc_integer()|
+| dec_integer()|
+| count_choices()|
+| toggle_bool()|
 
-Valid String Argument for Var(inputObject,arg):
-- state
-- rate
-- position
-- time
-- time-offset
-- bookmark
-- program
-- title
-- chapter
-- audio-delay
-- spu-delay
-- video-es
-- audio-es
-- spu-es
-- record
-- frame-next
+|Valid String Argument for Var(inputObject,arg):|
+|---|
+| state|
+| rate|
+| position|
+| time|
+| time-offset|
+| bookmark|
+| program|
+| title|
+| chapter|
+| audio-delay|
+| spu-delay|
+| video-es|
+| audio-es|
+| spu-es|
+| record|
+| frame-next|
 
 
 
