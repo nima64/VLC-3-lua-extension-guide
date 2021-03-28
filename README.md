@@ -31,7 +31,7 @@ vlc.var.set(vlc.object.input(),"position",3240)
 
 ### URI file handling in VLC ###  
 vlc paths are all handled in URI  
-to create a uri path use vlc.strings.make_uri(path).
+to create a uri path use vlc.strings.make_uri(path)
 
 In windows use backslashes \ in your path, if you use / foward slashes your path will be appended to vlc's config directory.  
 
