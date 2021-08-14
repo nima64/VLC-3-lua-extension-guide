@@ -1,5 +1,5 @@
 # VLC 3.0 Lua Extension Guide
-This a documentation for writing extensions in lua for vlc 3, as parts of the [lua readme](https://www.videolan.org/developers/vlc/share/lua/README.txt) provided by Video Lan is depcricated. So I made this guide to supplement the readme for any questions and confusion others may have.
+This a documentation for writing extensions in lua for vlc 3, as parts of the [lua readme](https://www.videolan.org/developers/vlc/share/lua/README.txt) provided by Video Lan is deprecated. So I made this guide to supplement the readme for any questions and confusion others may have.
 
 to download the source code for VLC-3.0 visit the [git lab page](https://code.videolan.org/videolan/vlc-3.0)  
 callback functions that you use to communicate to VLC:  
